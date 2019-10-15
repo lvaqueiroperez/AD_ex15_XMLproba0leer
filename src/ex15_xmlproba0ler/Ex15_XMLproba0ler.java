@@ -7,10 +7,11 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 public class Ex15_XMLproba0ler {
+
     //DUDA NULL
     public static void main(String[] args) throws FileNotFoundException, XMLStreamException {
         //leer el documento anterior
-        File fich1 = new File("/home/oracle/Desktop/ex14/xmlproba0.xml");
+        File fich1 = new File("C:\\Users\\luis-\\Desktop\\2ºDAM\\AD\\ex14\\xmlproba0.xml");
 
         FileReader fich1FR = new FileReader(fich1);
 
