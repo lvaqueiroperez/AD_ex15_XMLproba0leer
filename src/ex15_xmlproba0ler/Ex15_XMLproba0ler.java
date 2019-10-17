@@ -11,7 +11,7 @@ public class Ex15_XMLproba0ler {
     //DUDA NULL
     public static void main(String[] args) throws FileNotFoundException, XMLStreamException {
         //leer el documento anterior
-        File fich1 = new File("C:\\Users\\luis-\\Desktop\\2ºDAM\\AD\\ex14\\xmlproba0.xml");
+        File fich1 = new File("/home/oracle/Desktop/ex14/xmlproba0.xml");
 
         FileReader fich1FR = new FileReader(fich1);
 
@@ -42,40 +42,36 @@ public class Ex15_XMLproba0ler {
         //que usar
         int tipoE = 0;
 
+        
+        /*
+        LO HACEMOS SOLO LEYENDO START_ELEMENTS
+        Y
+        USANDO SOLO getLocalName,getAttributeValue y getElementText
+        */
         while (xmlSR1.hasNext()) {
 
             tipoE = xmlSR1.getEventType();
 
-            switch (tipoE) {
+            if (tipoE == XMLStreamConstants.START_ELEMENT) {
 
-                case XMLStreamConstants.START_DOCUMENT:
-
-                    break;
                 //LOS ATRIBUTOS VAN DENTRO DE START ELEMENT !
-                case XMLStreamConstants.START_ELEMENT:
-                    System.out.println(xmlSR1.getLocalName());
-                    System.out.println(xmlSR1.getAttributeLocalName(0));
+                String localName = xmlSR1.getLocalName();
+                if (localName == "autor") {
+
                     System.out.println(xmlSR1.getAttributeValue(0));
 
-                    break;
-                case XMLStreamConstants.CHARACTERS:
-                    System.out.println(xmlSR1.getText());
-
-                    break;
-
-                case XMLStreamConstants.END_ELEMENT:
-
-                    break;
-
-                default:
-                    System.out.println("error");
+                }
+                else if (localName=="nome"){
+                System.out.println(xmlSR1.getElementText());
+                }
+                else if (localName=="titulo"){
+                System.out.println(xmlSR1.getElementText());
+                }
 
             }
             xmlSR1.next();
-
         }
         xmlSR1.close();
 
     }
-
 }
