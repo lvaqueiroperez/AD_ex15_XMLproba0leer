@@ -11,7 +11,7 @@ public class Ex15_XMLproba0ler {
     //DUDA NULL
     public static void main(String[] args) throws FileNotFoundException, XMLStreamException {
         //leer el documento anterior
-        File fich1 = new File("/home/oracle/Desktop/ex14/xmlproba0.xml");
+        File fich1 = new File("C:\\Users\\luis-\\Desktop\\2ºDAM\\AD\\ex14\\xmlproba0.xml");
 
         FileReader fich1FR = new FileReader(fich1);
 
@@ -42,12 +42,12 @@ public class Ex15_XMLproba0ler {
         //que usar
         int tipoE = 0;
 
-        
         /*
         LO HACEMOS SOLO LEYENDO START_ELEMENTS
         Y
         USANDO SOLO getLocalName,getAttributeValue y getElementText
-        */
+        (es decir, solo lo que pide el documento)
+         */
         while (xmlSR1.hasNext()) {
 
             tipoE = xmlSR1.getEventType();
@@ -60,12 +60,10 @@ public class Ex15_XMLproba0ler {
 
                     System.out.println(xmlSR1.getAttributeValue(0));
 
-                }
-                else if (localName=="nome"){
-                System.out.println(xmlSR1.getElementText());
-                }
-                else if (localName=="titulo"){
-                System.out.println(xmlSR1.getElementText());
+                } else if (localName == "nome") {
+                    System.out.println(xmlSR1.getElementText());
+                } else if (localName == "titulo") {
+                    System.out.println(xmlSR1.getElementText());
                 }
 
             }
