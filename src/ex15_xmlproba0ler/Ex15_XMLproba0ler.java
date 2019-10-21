@@ -43,10 +43,10 @@ public class Ex15_XMLproba0ler {
         int tipoE = 0;
 
         /*
-        LO HACEMOS SOLO LEYENDO START_ELEMENTS
-        Y
-        USANDO SOLO getLocalName,getAttributeValue y getElementText
-        (es decir, solo lo que pide el documento)
+         LO HACEMOS SOLO LEYENDO START_ELEMENTS
+         Y
+         USANDO SOLO getLocalName,getAttributeValue y getElementText
+         (es decir, solo lo que pide el documento)
          */
         while (xmlSR1.hasNext()) {
 
